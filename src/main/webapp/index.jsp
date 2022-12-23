@@ -2,11 +2,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JSP - Hello World</title>
+    <title>JSP REQUEST JDBC</title>
 </head>
 <body>
-<h1><%= "Hello World!" %></h1>
+<h1><%= "Request page" %>
+</h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<a href="first">First request</a>
+<br/>
+<br/>
+<a href="second">Second request</a>
 </body>
 </html>

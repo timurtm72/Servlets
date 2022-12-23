@@ -1,27 +1,25 @@
-package com.example.servlets;
+package com.example.servlets.servlets;
 
 import java.io.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
+import com.example.servlets.model.Library;
+import com.example.servlets.utils.Util;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 @WebServlet(name = "firstServlet", value = "/first")
 public class FirstServlet extends HttpServlet {
-    private String message;
-
     public void init() {
+        Util.initDriver();
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//        response.setContentType("text/html");
-//
-//        // Hello
-//        PrintWriter out = response.getWriter();
-//        out.println("<html><body>");
-//        out.println("<h1>" + message + "</h1>");
-//        out.println("</body></html>");
+        ResultSet resultSet = Util.getData("select * from books");
+        Util.printResponseData(response, resultSet, Util.FIRST_REQUEST);
     }
-
     public void destroy() {
     }
 }

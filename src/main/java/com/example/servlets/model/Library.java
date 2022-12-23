@@ -1,8 +1,14 @@
-package com.example.servlets;
+package com.example.servlets.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 @Data
+@AllArgsConstructor
 public class Library {
-    Integer id;
+    String id;
     String title;
     String author;
-    Integer quantity;
+    String quantity;
+
 }
